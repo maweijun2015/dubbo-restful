@@ -1,0 +1,26 @@
+spring:
+  # DataSource Config
+  dubbo:
+    container: logback,spring
+    shutdown:
+      hook: true
+    application:
+      name: dubbo-restful-service
+      owner: dubbo-restful
+      logger: slf4j
+    registry:
+      protocol: zookeeper
+      address: 127.0.0.1:2181
+    provider:
+      timeout: 80000
+      retries: 0
+      actives: 100
+      loadbalance: leastactive
+      weight: 300
+    logback:
+      level: info
+    monitor:
+      protocol: registry
+
+server:
+  port: 7777

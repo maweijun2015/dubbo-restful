@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: dubbo-restful-service
+  profiles:
+    active: '@profileActive@'
+

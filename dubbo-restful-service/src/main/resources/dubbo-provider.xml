@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+       default-lazy-init="false">
+
+    <dubbo:consumer check="false"/>
+
+    <dubbo:protocol name="rest" port="8888" threads="500" server="tomcat"/>
+    <dubbo:protocol name="dubbo" port="20880" threads="500"/>
+
+   <!-- dubbo restful demo -->
+    <dubbo:service interface="com.maweijun1028.dubbo.restful.api.service.DemoRestService" ref="demoRestServiceImpl" protocol="rest" retries="0" timeout="80000" owner="mwj"/>
+
+
+
+
+</beans>
